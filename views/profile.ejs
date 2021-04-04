@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <title>Roulette Express</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1> Admin Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <div class="split">
+        <div class="box1">
+            <!--   THIS DIV SHOWS ROULETTE WINNINGS       -->
+                    <h3>Roulette Winnings</h3>
+                    <ul class="messages">
+                    <% 
+                    let casinoWonSum = 0
+                    for(var i=0; i<messages.length; i++) {
+                        casinoWonSum += messages[i].moneyWon
+                      if(messages[i].moneyWon > 0){
+                          
+                      %>
+                      <li class="message">
+                        <span><%= messages[i].name %></span>
+                        <span><%= messages[i].bet %></span>
+                        <span><%= messages[i].color %></span>
+                        <span><%= messages[i].moneyWon %></span>
+                        <span><%= messages[i].moneyLost %></span>
+                        <span><%= messages[i].timestamp %></span>
+                      </li>
+                    <% }
+                  } %>
+                    </ul>
+                    <h3>Winnings: <%= casinoWonSum%></h3>
+        </div>
+        <!-- THIS DIV SHOWS CASINO LOSSES -->
+        <div class="box1">
+
+          <h3>Roulette Losses</h3>
+          <ul class="messages">
+          <% 
+           let casinoLostSum = 0
+          for(var i=0; i<messages.length; i++) {
+            casinoLostSum += messages[i].moneyLost
+            if(messages[i].moneyLost > 0){
+                
+            %>
+            <li class="message">
+              <span><%= messages[i].name %></span>
+              <span><%= messages[i].bet %></span>
+              <span><%= messages[i].color %></span>
+              <span><%= messages[i].moneyWon %></span>
+              <span><%= messages[i].moneyLost %></span>
+              <span><%= messages[i].timestamp %></span>
+            </li>
+          <% }
+        } %>
+          </ul>
+          <h3>Losses: <%= casinoLostSum%></h3>
+        </div>
+    </div>
+        <div class="square">
+          <div class="box2">
+              
+            <h3>Roulette Net Profit: <%= casinoWonSum - casinoLostSum%></h3>
+          </div>
+        </div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

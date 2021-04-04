@@ -1,0 +1,126 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-image: url("./img/main.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+img{
+  height: 200px;
+}
+
+.cashierContainer{
+  margin-left: 37%;
+  color: white;
+}
+
+/* .size{
+  margin-left: 10%;
+} */
+
+button:hover{
+  background-color: aquamarine;
+}
+
+h1, h2, p{
+  /* font-family: 'Zilla Slab Highlight', cursive; */
+  font-family: 'Unica One', cursive;
+}
+h2{
+  /* font-family: 'Zilla Slab Highlight', cursive; */
+  font-family: 'Unica One', cursive;
+  color: white;
+  border: 3px solid black;
+  width: fit-content;
+  background-color: black;
+  margin-left: 44%;
+}
+
+.jumbotron.text-center{
+  color:#74A72A;
+}
+
+.container{
+  color: white;
+}
+
+.done{
+  text-decoration: line-through;
+}
+#wheel{
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+}
+
+#wheel::before{
+    content: "";
+    background-image: url(img/wheel.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transform: rotate(43deg);
+    z-index: 0;
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    border: 1px solid yellow;
+    transition: all 4s ease;
+    margin-left: 105%;
+}
+
+#ball{
+  border-radius: 50% ;
+  background-image: url(img/ball.png);
+  height: 45px;
+  width: 45px; 
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 22%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  margin-left: 105%;
+  
+}
+
+#name{
+  margin-left: 35%;
+}
+.results{
+  margin-left: 45%;
+}
+
+.amount{
+  margin-left: 46%;
+}
+
+.split{
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.box1{
+  width:50%;
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  min-height: 700px;
+}
+.box2{
+  width:100%;
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  min-height: 50px;
+}
+h3{
+  text-align: center;
+}
